@@ -14,6 +14,15 @@ namespace Entities
         {
             return string.Format("{0},{1},{2},{3}\n", PatientId, PatientName, Date.ToShortDateString(), Amount);
         }
+
+        //public static Patient operator =(Patient lhs, Patient other)
+        //{
+        //    lhs.PatientId = other.PatientId;
+        //    lhs.Date = other.Date;
+        //    lhs.Amount = other.Amount;
+        //    lhs.PatientName = other.PatientName;
+        //    return lhs;
+        //}
     }
 }
 
@@ -39,10 +48,38 @@ namespace DALayer
 
         public void DeletePatient(Patient p)
         {
-            throw new NotImplementedException();
+            var list = getAllPatients();
+            var found = list.Find((pt) => pt.PatientId == p.PatientId);
+            list.Remove(found);
+            saveAll(list);
         }
 
         public List<Patient> GetAllPatients()
+        {
+            return getAllPatients();
+        }
+        //ToDO: fix the bug of Patient updating or identify the bug, will discuss in the next class..
+        public void UpdatePatient(Patient p)
+        {
+            var list = getAllPatients();
+            var found = list.Find((pt) => pt.PatientId == p.PatientId);
+            found.Amount = p.Amount;
+            found.PatientName = p.PatientName;
+            found.Date = p.Date;
+            saveAll(list);
+            
+        }
+
+        //Helper function used to save all records after any updating or deleting is done..
+        private void saveAll(List<Patient> patients)
+        {
+            string lines = string.Empty;
+            for (int i = 0; i < lines.Length; i++)
+                lines += patients[i].ToString();//CSV...
+            File.WriteAllText(fileName, lines);
+        }
+
+        private List<Patient> getAllPatients()
         {
             List<Patient> all = new List<Patient>();
             string[] allLines = File.ReadAllLines(fileName);
@@ -57,11 +94,6 @@ namespace DALayer
                 all.Add(p);
             }
             return all;
-        }
-
-        public void UpdatePatient(Patient p)
-        {
-            throw new NotImplementedException();
         }
     }
 }
@@ -130,12 +162,30 @@ namespace ConsoleUI
                 }
             }
         }
-
+        //U cannot modify files in b/w in C#. 
         private static void updatingPatientHelper()
         {
             //take inputs for updating the Patient record
-            //call the interface method called UpdatePatient and pass the object as arg
-            //display any exception messages if required.
+            int id = MyConsole.GetNumber("Enter the ID of the Patient to update");
+            string name = MyConsole.GetString("Enter the Name to Update");
+            int amount = MyConsole.GetNumber("Enter the Bill Amount to Update");
+            
+            Patient p = new Patient
+            {
+                Amount = amount,
+                PatientId = id,
+                PatientName = name
+            };
+            //call the interface method called AddPatient and pass the object as arg
+            try
+            {
+                demo.UpdatePatient(p);
+                Console.WriteLine("Patient updated Successfully");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Adding Patient has failed");
+            }
         }
 
         private static void deletingPatientHelper()
