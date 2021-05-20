@@ -1,0 +1,7 @@
+﻿~~~~~~~~~~~~~~~~~~~~PATIENT RECORD SYSTEM~~~~~~~~~~~~~~~~~~~
+TO ADD NEW PATIENT--------->PRESS 1
+TO DELETE PATIENT---------->PRESS 2
+TO UPDATE RECORD----------->PRESS 3
+TO FIND PATIENT------------>PRESS 4
+PS: PRESS ANY OTHER KEY TO EXIT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
