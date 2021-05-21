@@ -1,0 +1,13 @@
+//End Module Exam for Resilience
+1. Create a Console Application for Film Reviewing purposes in the Application.
+In this Application, the Users should be able to add reviews to the movies which he has seen recently.
+It is a single User application, so no scope of multi User environment. 
+The Application should have the following featurs:
+1. Add a review to a movie.
+2. Find all reviews of a given movie.
+3. The data should be stored as CSV file and data will be read from the CSV file. 
+The Code must have the following standards:
+Naming conventions
+Commenting of code. 
+Exception Handling. 
+Code should be written to make it Interactive.
