@@ -25,5 +25,6 @@ Multi Threading features: Thread class, Lambda Expressions, lock and Monitor.
 Collections using Generics: List<T>, Dictionary<K,V>, HashSet<T>, Queue<T>, Stack<T>....
 Explore : IEnumerable<T> vs. IEnumerator<T>, IComparable<T> and IComparer<T>.
 File Handling in C#: File class, FileStream, Serialization(Binary and Xml). Create an Example for storing collection data thru' Serialization. Understand the problems of Serialization and File Handling.
+How to debug a Code in VS? F5, F10, F11, Watch Window, Output Window....
 
 
