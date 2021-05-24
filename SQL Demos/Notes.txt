@@ -1,0 +1,7 @@
+Notes.txt
+SQL Server is a RDBMS where the data is stored in the form of Rows and columns grouped into tables and all tables into database. SQL Server uses a query language called T-SQL(Transact Sql) to communicate with the database server. 
+SQL server is a server that holds multiple databases in it. Server usually refers to the machinename followed by a Name U give to the server. SQL server is db management software which contains one or more databases in it. Each database has its own credentials and rules that are implemented and enforced by SQL Server.
+All DB related activites will happen on Database Engine. This is the core component of SQL server which developers will interact. U need to select this while connecting to the database. 
+In the training, we are using SQL Server Express Edition that is available for all users without any additional licencing, good for learning and working with small scale databases.
+
+Using T-SQL U can create Queries and execute them in UR Sql Server to get the relevant operations. All SQL based Queries can be saved as files with extension ".sql".
