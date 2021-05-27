@@ -6,6 +6,10 @@ using System.Linq;
  * Stands for Language integrated Queries: Introduced in .NET 3.5.
  * It allows to perform queries like SQL server but on Objects of .NET using simplified syntax. It is based on Collections. U will perform queries on Collections. 
  * To do this, C# 3.5 introduced new keywords and features: select, group, by, order and features like var, anonymous types, lamdba expressions and so forth... 
+ * LINQ was traditionally Read only. If U have a collection, the LINQ helps in performing queries not insertion, deletion or updation and even saving. 
+ * To do that U can use database and XML files 
+ * LINQ is available on XML called XLINQ. (Shared some examples)
+ * LINQ on SQL server database is called as LINQ to SQL. LINQ to SQL is an ORM Framework. Object Relational Mapping. It is a Framework that will treat Tables as classes and its columns as properties and the data of those tables as Collections. 
  */
 
 namespace DatabaseApps
@@ -65,6 +69,45 @@ namespace DatabaseApps
             foreach(var detail in info)
             {
                 Console.WriteLine($"{detail.EmpName} is from {detail.EmpAddress}");
+            }
+        }
+
+        public static void WhereClauseDemo()
+        {
+            Console.WriteLine("Enter the City name");
+            var city = Console.ReadLine();
+
+            var selected = from emp in list
+                           where emp.EmpAddress.ToUpper() == city.ToUpper() && emp.EmpName.Contains("Chandler")
+                           select emp;//SELECT * From list WHERE EMPADDRESS = @city
+
+            //LINQ Query will always return a collection.. U should do a foreach to fetch the record(s). 
+            foreach(var rec in selected)
+                Console.WriteLine(rec.EmpName + " from " + rec.EmpAddress);
+        }
+
+        public static void OrderByClauseDemo()
+        {
+            var records = from emp in list
+                          orderby emp.EmpAddress, emp.EmpName
+                          select new { Name = emp.EmpName, City = emp.EmpAddress };
+
+            foreach (var name in records) Console.WriteLine($"{name.City}-{name.Name}");
+        }
+
+        public static void GroupByClause()
+        {
+            var records = from emp in list
+                          group emp.EmpName by emp.EmpAddress into gr
+                          orderby gr.Key descending
+                          select gr;
+            //Finally U get a collection of groups where each group has a collection of names...
+            foreach(var gr in records)
+            {
+                Console.WriteLine("Employees from " + gr.Key);
+                foreach(var name in gr)
+                    Console.WriteLine(name);
+                Console.WriteLine("-----------------------------");
             }
         }
     }

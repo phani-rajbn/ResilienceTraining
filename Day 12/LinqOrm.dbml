@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CSharpProject" Class="LinqOrmDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AKSHAY-PC\SQLEXPRESS;Initial Catalog=CSharpProject;Integrated Security=True" SettingsObjectName="DatabaseApps.Properties.Settings" SettingsPropertyName="CSharpProjectConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblEmployee" Member="tblEmployees">
+    <Type Name="tblEmployee">
+      <Column Name="EmpID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EmpName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpAddress" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpPhone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpSalary" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DeptId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblDept_tblEmployee" Member="tblDept" ThisKey="DeptId" OtherKey="DeptID" Type="tblDept" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDept" Member="tblDepts">
+    <Type Name="tblDept">
+      <Column Name="DeptID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeptName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="tblDept_tblEmployee" Member="tblEmployees" ThisKey="DeptID" OtherKey="DeptId" Type="tblEmployee" />
+    </Type>
+  </Table>
+</Database>

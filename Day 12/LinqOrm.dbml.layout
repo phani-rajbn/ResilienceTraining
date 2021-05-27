@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LinqOrm">
+  <DataContextMoniker Name="/LinqOrmDataContext" />
+  <nestedChildShapes>
+    <classShape Id="edad8a4f-70af-492a-95c5-dbb508bbbec5" absoluteBounds="1.5, 0.875, 2, 1.896263045668602">
+      <DataClassMoniker Name="/LinqOrmDataContext/tblEmployee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6d1d7ce-2a31-484e-8b11-71893521609f" absoluteBounds="1.5150000000000001, 1.335, 1.9700000000000002, 1.336263045668602" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56c8d9a4-ef42-4eb5-81d8-3b90684574aa" absoluteBounds="4.625, 1.25, 2, 1.1627560879786809">
+      <DataClassMoniker Name="/LinqOrmDataContext/tblDept" />
+      <nestedChildShapes>
+        <elementListCompartment Id="807fdbc5-43d4-4748-8eaf-598bf99318a6" absoluteBounds="4.64, 1.71, 1.9700000000000002, 0.60275608797868085" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 1.83137804398934); (3.5 : 1.83137804398934)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqOrmDataContext/tblDept/tblDept_tblEmployee" />
+      <nodes>
+        <classShapeMoniker Id="56c8d9a4-ef42-4eb5-81d8-3b90684574aa" />
+        <classShapeMoniker Id="edad8a4f-70af-492a-95c5-dbb508bbbec5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
