@@ -21,7 +21,18 @@ namespace DatabaseApps
             //ConnectedModelCode();
 
             //LinqDemo.DisplayAllNames(); 
-            LinqDemo.DisplayNameAndCity();
+            //LinqDemo.DisplayNameAndCity();
+            //LinqDemo.WhereClauseDemo();
+            //LinqDemo.OrderByClauseDemo();
+            //LinqDemo.GroupByClause();
+
+            //Linq_SqlDemo.DisplayNamesFromDB();
+            //Linq_SqlDemo.DisplayNameAndDept();
+            //Linq_SqlDemo.DisplayNameFromCity();
+            //Linq_SqlDemo.InsertRecord();
+            //Linq_SqlDemo.bulkInsertion();
+            //Linq_SqlDemo.UpdateRecord();
+            Linq_SqlDemo.DeleteRecord();
         }
 
         private static void ConnectedModelCode()
