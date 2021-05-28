@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Calc Program</title>
+    <style>
+        h1{
+            font-size: 38pt;
+            text-align:center;
+            color:goldenrod;
+            background-color:saddlebrown;
+        }
+    </style>
+    <script src="helper.js"></script>
+    <script>
+        callObject();
+        function onOperation() {
+            //take the first and second value along with operand
+            var firstValue = parseFloat($("txtFirst"));
+            var secondValue = parseFloat($("txtSecond"));
+            var operand = $("option");
+            var result = 0.0;
+            //use the switch case to do operation
+            switch (operand) {
+                case "+":
+                    result = firstValue + secondValue;
+                    break;
+                case "-":
+                    result = firstValue - secondValue;
+                    break;
+                case "X":
+                    result = firstValue * secondValue;
+                    break;
+                case "/":
+                    result = firstValue / secondValue;
+                    break;
+            }
+            //set the value to the obtained result.
+            document.getElementById("spResult").innerText = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Math Calculator</h1>
+    <hr />
+    <div>
+        <input type="number" id="txtFirst" placeholder="Enter First Value" />
+        <select id="option">
+            <option>+</option>
+            <option>-</option>
+            <option>X</option>
+            <option>/</option>
+        </select>
+        <input type="number" id="txtSecond" placeholder="Enter Second Value" />
+        <button onclick="onOperation()">=</button>
+        <span id="spResult">Value</span>
+    </div>
+</body>
+</html>
