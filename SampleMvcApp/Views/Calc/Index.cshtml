@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var options = new List<SelectListItem>
+    {
+        new SelectListItem{ Text = "+"},
+        new SelectListItem{ Text = "-"},
+        new SelectListItem{ Text = "X"},
+        new SelectListItem{ Text = "/"},
+    };
+}
+
+<h2>My Calc Program</h2>
+<hr />
+<div>
+    @using (Html.BeginForm())
+    {
+
+        <p>
+            Enter the First Value: @Html.Editor("FirstValue")
+            @Html.DropDownList("Operand", options);
+            Enter the Second Value: @Html.Editor("SecondValue")
+            <button>Result</button>
+        </p>
+
+    }
+</div>
+

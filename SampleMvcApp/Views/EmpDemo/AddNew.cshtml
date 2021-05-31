@@ -1,0 +1,20 @@
+﻿@model SampleMvcApp.Models.tblEmployee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNew</title>
+</head>
+<body>
+    @using (Html.BeginForm()) {
+        @Html.EditorForModel();
+        <button>Submit</button>
+    }
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@model SampleMvcApp.Models.tblEmployee
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+</head>
+<body>
+    <h2>Details of @Model.EmpName to Edit!!!!</h2>
+    <hr />
+    <div>
+        @using (Html.BeginForm()) {
+            <p>EmpID : @Html.EditorFor((m) => m.EmpID)</p>
+            <p>Name: @Html.EditorFor((m) => m.EmpName) </p>
+            <p>Address: @Html.EditorFor((m) => m.EmpAddress) </p>
+            <p>Salary: @Html.EditorFor((m) => m.EmpSalary) </p>
+            <p>Phone: @Html.EditorFor((m) => m.EmpPhone) </p>
+            <p>Dept ID: @Html.EditorFor((m) => m.DeptId) </p>
+            <button>Make Changes</button>
+        }
+    </div>
+</body>
+</html>

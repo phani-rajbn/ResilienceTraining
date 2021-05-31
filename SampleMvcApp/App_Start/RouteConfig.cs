@@ -16,7 +16,7 @@ namespace SampleMvcApp
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "DataAccess", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "EmpDemo", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
