@@ -1,0 +1,24 @@
+﻿@model SampleMvcApp.Models.tblEmployee
+@{ 
+    var depts = ViewBag.Depts;
+    var listItems = new List<SelectListItem>();
+    foreach (var dept in depts)
+    {
+        listItems.Add(new SelectListItem { Text = dept.DeptName, Value = dept.DeptID.ToString() });
+    }
+}
+<h2>Edit Employee Details to update!!!</h2>
+<hr />
+@using (Html.BeginForm())
+{
+<p>
+    Employee ID: @Html.DisplayFor((m) => m.EmpID)@*Visible to the User but not the part of the Submit data*@
+                 @Html.HiddenFor((m) => m.EmpID)@*//This becomes an hidden field, it will be a part of the submit but not visible*@
+</p>
+    <p>Employee Name: @Html.EditorFor((m) => m.EmpName)</p>
+    <p>Employee Address: @Html.EditorFor((m) => m.EmpAddress)</p>
+    <p>Employee Phone: @Html.EditorFor((m) => m.EmpPhone)</p>
+    <p>Employee Salary: @Html.EditorFor((m) => m.EmpSalary)</p>
+    <p>Dept Name: @Html.DropDownListFor((m) => m.DeptId, listItems)</p>
+    <button>Submit</button>
+}

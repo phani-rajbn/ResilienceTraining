@@ -1,0 +1,25 @@
+﻿@model List<SampleMvcApp.Models.tblEmployee>
+@{ 
+        var options = new AjaxOptions
+        {
+            UpdateTargetId = "area", InsertionMode = InsertionMode.Replace
+        };
+}
+<table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    @foreach(var emp in Model)
+    {
+        <tr>
+            <td>@emp.EmpID</td>
+            <td>@emp.EmpName</td>
+            <td>@Ajax.ActionLink("More...", "Details", new { id = emp.EmpID} , options)</td>
+        </tr>
+    }
+</table>
+
