@@ -1,6 +1,6 @@
 ﻿
-@{
-    ViewBag.Title = "Index";
+@{  
+    var result = TempData["ResultValue"];//There is no need for unboxing when U use ViewBag dynamic object. It internally behaves like a dictionary.
     var options = new List<SelectListItem>
     {
         new SelectListItem{ Text = "+"},
@@ -10,19 +10,19 @@
     };
 }
 
-<h2>My Calc Program</h2>
+<h2 class="h2 jumbotron jumbotron-fluid">My Calc Program</h2>
 <hr />
-<div>
-    @using (Html.BeginForm())
+<div >
+    @using (Html.BeginForm("GetResult", "Calc"))
     {
 
         <p>
             Enter the First Value: @Html.Editor("FirstValue")
-            @Html.DropDownList("Operand", options);
+            @Html.DropDownList("Operand", options)
             Enter the Second Value: @Html.Editor("SecondValue")
-            <button>Result</button>
+            <button class="btn-danger">Result</button>
         </p>
-
     }
+    <p>@result</p>
 </div>
 
