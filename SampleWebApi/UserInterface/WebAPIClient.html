@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Scripts/jquery-3.6.0.min.js"></script>
+    <script>
+        let url = "http://localhost:64033/api/EmpData"
+        function getRecords() {
+            $("table").find("tr:gt(0)").remove();//removes all old rows other than heading row...
+            $.get(url, (response) => {
+                //alert(response);
+                //var data = JSON.stringify(response);
+                $.each(response, ((index, val) => {
+                    let row = `<tr><td>${val.EmpId}</td><td>${val.EmpName}</td><td>${val.EmpAddress}</td><td>${val.EmpSalary}</td><td>${val.EmpPhone}</td><td>${val.DeptId}</td><tr>`;
+                    $("table").append(row);
+                }));
+            })
+        }
+        function func() {12```
+            $("button").click(()=> getRecords())
+        }
+
+        $(document).ready(() => func())
+    </script>
+</head>
+<body>
+    <h2>List of Employees</h2>
+    <button>Display Records</button>
+    <table border="1">
+        <tr>
+            <th>EmpID</th>
+            <th>EmpName</th>
+            <th>EmpAddress</th>
+            <th>EmpSalary</th>
+            <th>EmpPhone</th>
+            <th>Dept</th>
+        </tr>
+    </table>
+</body>
+</html>
