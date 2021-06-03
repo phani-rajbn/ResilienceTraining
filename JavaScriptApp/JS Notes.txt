@@ -1,0 +1,18 @@
+﻿Scripts folder contains the JS code and files related to JS. It might include libraries like jQuery, BootStrap and other JS libs. 
+Views contain UR HTML Pages that is to be displayed to the Users.All HTML docs will come in the Views. 
+Content folder will contain the CSS files required for UR application.
+
+JS is case sensitive. UR variables are declared as var, (let and const are new from ES6). 
+Names of UR variables should be camel cased, U could use sp symbols like _ and $.
+; is optional in JS. It is good to end a statement with ;. 
+If U R writing multiple statements in one line, then ; must be be required to separate each statement. 
+Statements: if...else, switch, do...while, while, for, foreach, for in.
+U can create JS code either within the HTML doc or U could create it in a seperate file with extension .js.
+JS code will execute on browsers only. U dont have a compiler for JS, its a scripting language, U need an interpretor. HTML pages run on the browser. So always embedd the js code inside an HTML document and run it.
+NODE.js is the way of running JS code outside the browser. 
+JS has got a lot of functions that can be used in ur js code. 
+UI related: alert, prompt, confirm. 
+With new JS, it is wrong to use undeclared variables. U should declare them before use.
+When U declare a variable, but dont initialize it, it is called undefined. 
+JS does not have data type for the user, internally it has 4 types: number, string, bool, object.
+To display ur info within the browser but not on the document, U could use console.log. This is helpful for debugging purpose and will not corrupt the User interface. 

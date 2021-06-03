@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../Scripts/Example1.js"></script>
+    <script>
+        //ready is a function that is invoked like event handler when the document is fully loaded into the browser. 
+        function init() {
+            $("button:eq(0)").click(() => {
+                let v1 = parseFloat($("#first").val());
+                let v2 = parseFloat($("#second").val()); //#followed by ID should be used to get the Element by ID..
+                let res = addFunc(v1, v2);
+                $("#result").text(res);
+            })
+        }
+        $(document).ready(init);//delegate concept in C#...
+    </script>
+</head>
+<body>
+        <h1>Calc Program using jQuery</h1>
+            <div>
+                <p>Enter Value1: <input type="number" id="first" value="" /></p>
+                <p>Enter Value2: <input type="number" id="second" value="" /></p>
+                <p>
+                    <button>Add</button>
+                    <button>Subtract</button>
+                    <button>Multiply</button>
+                    <button>Divide</button>
+                </p>
+                <p>
+                    <span id="result"></span>
+                </p>
+            </div>
+    </body>
+</html>

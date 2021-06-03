@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="../Scripts/Example1.js"></script>
+    <script>
+        function onAddFunc() {
+            //value entered in a inputbox is always string. U convert it to a number using parseInt and parseFloat. 
+            //Take the first value:
+            let v1 = parseFloat(document.getElementById("first").value);
+            let v2 = parseFloat(document.getElementById("second").value);
+            //alert("The added value is " + (v1 + v2));
+            let res = v1 + v2;
+            let spElement = document.getElementById("result")
+            spElement.innerText = res;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p>Enter Value1: <input type="number" id="first" value="" /></p>
+        <p>Enter Value2: <input type="number" id="second" value="" /></p>
+        <p>
+            <button onclick="onAddFunc()">Add</button>
+            <button>Subtract</button>
+            <button>Multiply</button>
+            <button>Divide</button>
+        </p>
+        <p>
+            <span id="result"></span>
+        </p>
+    </div>
+</body>
+</html>

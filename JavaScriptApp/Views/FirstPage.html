@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS First Example</title>
+    <script>
+        //////////////////////////Displaying UI elements of JS//////////////////////////////////////////////////
+        //var answer;
+        //alert("Text message that U want to display to the User")//Message Boxes.
+        //let response = prompt("What Do U want to do today?")//displays the questions, gets the answer as input and returns it as string. 
+        //alert(response)
+        //let answer = confirm("Do U really want to do this?")//Asks the question for confirmation and return true for OK. 
+        //console.log(answer)
+        ///////////////Knowning the data type of the variable in JS/////////////////////////////////////////
+        //let value = 123;
+        //console.log(typeof (value));
+        //value = "Sample Data"
+        //console.log(typeof (value));
+        //value = true;
+        //console.log(typeof (value));
+        //value = ["Apple", "Mango", "Orange"]//Arrays are objects in JS. 
+        //console.log(typeof (value));
+        /////////////////////////////////////////////////////////////////////////////////////////
+        let fruits = ["Mango", "Apple"];//syntax of creating array in JS...
+        //Arrays are dynamic, they work like our collections. 
+        fruits.push("Orange");//to add the element to the bottom of the List, similar to Add of the List<T>
+        //for (var i = 0; i < fruits.length; i++) {
+        //    console.log(fruits[i]);
+        //}
+        //foreach is new to JS since ES 4...
+        //fruits.forEach((value) => console.log(value));
+        //to remove an element: splice
+        fruits.splice(1, 1);//1st will be the index from where the deletion should happen, 2nd will be the no of elements to remove. 
+        //fruits.splice(1, 0, "PineApple")//Replacing/Updating the element....When the 2nd parameter is 0, no elements will be removed. 
+        fruits.splice(fruits.length - 1, 0, "Bananas", "Kiwi Fruit");//Inserts the elements from that index mentioned in 1st arg..
+        fruits.unshift("Apple", "Grapes");//Adds the new items to the begining of the Array..
+        fruits.forEach((value) => console.log(value));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
