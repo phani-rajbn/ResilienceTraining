@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../Content/MainStyle.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../Scripts/EmpDatabase.js"></script>
+    <title>Employee Manager</title>
+    <script>
+        let db = new EmpDatabase();
+        function fillRecords() {
+            if (db.getAll().length == 0) {
+                db.addEmp(new employee(123, "Phaniraj", 34000));
+                db.addEmp(new employee(124, "Ramesh", 34000));
+                db.addEmp(new employee(125, "Cheran", 34000));
+                db.addEmp(new employee(126, "Kasturi", 34000));
+            }
+            let array = db.getAll();//get the data from the component..
+            $("table").find("tr:gt(0)").remove();
+            array.forEach((val) => {
+                var row = `<tr><td>${val.empId}</td><td>${val.empName}</td><td>${val.empSalary}</td></tr>`;
+                $("table").append(row);
+            })
+        }
+        function init() {
+            $("a:eq(0)").click(() => {
+                $("div").hide(1000);
+                $("#table").show(1000);
+                fillRecords();
+            })
+
+            $("a:eq(1)").click(() => {
+                $("div").hide(1000);
+                $("#addRec").show(1000);
+            })
+
+            $("a:eq(2)").click(() => {
+                $("div").hide(1000);
+                $("#delRec").show(1000);
+            })
+
+            $("a:eq(3)").click(() => {
+                alert("Welcome to training!!!")
+            })
+            $("#addRec > button").click(() => {
+                //get the values from the text boxes...
+                let id = parseInt($("#addRec > input:eq(0)").val());
+                let name = $("#addRec > input:eq(1)").val()
+                let salary = parseInt($("#addRec > input:eq(2)").val())
+                //create an object:
+                let emp = new employee(id, name, salary);
+                db.addEmp(emp);
+                //reset the values to blank.
+                $("#addRec > input:eq(0)").val("")
+                $("#addRec > input:eq(1)").val("")
+                $("#addRec > input:eq(2)").val("")
+                alert("Employee added!!!!");
+                $("#addRec").hide();
+            })
+        }
+
+        $(document).ready(() => {
+            $("div").hide(500);
+            init();
+        })
+    </script>
+
+</head>
+<body>
+    <h1> Employee Detail System</h1>
+    <nav>
+        <a href="#">All Employees</a>
+        <a href="#">Add New Employee</a>
+        <a href="#">Delete Employee</a>
+        <a href="#">About Us!</a>
+    </nav>
+    <div id="table">
+        <h2>List of Employees</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>EmpID</th>
+                <th>EmpName</th>
+                <th>EmpSalary</th>
+            </tr>
+        </table>
+    </div>
+    <div id="updateRec">
+        <h2>Details of Employee</h2>
+        <input placeholder="Employee ID" type="number" />
+        <input placeholder="Employee Name" />
+        <input placeholder="Employee Salary" type="number" />
+        <button>Update changes</button>
+    </div>
+    <div id="addRec">
+        <h2>Employee Details to Add</h2>
+        <input placeholder="Employee ID" type="number" />
+        <input placeholder="Employee Name" />
+        <input placeholder="Employee Salary" type="number" />
+        <button>Save changes</button>
+    </div>
+    <div id="delRec">
+        <h2>Delete an Employee</h2>
+        <span>Enter the ID to delete: </span>
+        <input placeholder="Employee ID" type="number" />
+        <button>Delete Record</button>
+    </div>
+    <hr />
+    <p><i>Powered by HTML5 and JQuery- 2021</i></p>
+</body>
+</html>
