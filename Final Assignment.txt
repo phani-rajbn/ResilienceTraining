@@ -1,0 +1,19 @@
+SuperMarket Billing System: (4 hrs + 1 hr)
+Assumption: Stock is available all the time. 
+List of the all products in an CSV file. U should create a DLL that reads this file and returns a list of the products. 
+Create a Web API that will display all Products, Add New Bill to the database, Find Bill based on the BillNo or CustomerName.
+HTML App that consumes the List of Products thru' Web API.
+It should generate the Bill for a given Customer: Assumption: Customer will select the Products and will click a button called Buy Products that will display all the products purchased by the Customer like Report. billing cycle could be created like dummy inputs and accept the payment. 
+Finally the report should be converted to a PDF file and display.
+The data of the customer will be stored into the database. U dont have to get the detailed billing.  
+Apply the following features:
+Exception handling. 
+Custom Exceptions
+File Reading.
+Database programming(Data Access Model is ur choice)
+DLL creation and consuming. 
+Web API Creation and Consuming
+HTML App consuming the Web API. 
+OOP features like Class creation, Properties, Functions and so forth...
+
+5 PM today EOD...
